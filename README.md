@@ -8,6 +8,7 @@
    C. Put your parsed results into a DataFrame.
 
 2. Connecting to Foursquare and Yelp APIs
+3. Joining Data
 
  
 
