@@ -1,7 +1,12 @@
 # Final-Project-Statistical-Modelling-with-Python
 
 ## Project/Goals
-(fill in your description and goals here)
+1. Fetching the data
+   A. Send a request to CityBikes for the city of your choice.
+   B. Parse through the response to get the details you want for the bike stations in that city (latitude, longitude, number of bikes).
+   C. Put your parsed results into a DataFrame.
+
+ 
 
 ## Process
 ### (your step 1)
