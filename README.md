@@ -9,7 +9,7 @@
 
 2. Connecting to Foursquare and Yelp APIs
 3. Joining Data
-
+4. Building a Model
  
 
 ## Process
