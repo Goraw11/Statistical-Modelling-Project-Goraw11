@@ -15,7 +15,7 @@
 ## Process
 Using the code below, I started off by Sending an API Request to City Bikes API, picked city of Hamilton, Ontario.
 
-```
+```Python
 import requests
 import pandas as pd
 
