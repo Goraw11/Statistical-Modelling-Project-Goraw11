@@ -13,8 +13,56 @@
  
 
 ## Process
-### (your step 1)
-### (your step 2)
+Using the code below, I started off by Sending an API Request to City Bikes API, picked city of Hamilton, Ontario.
+(I had to ensure that I do not get 
+
+```
+import requests
+import pandas as pd
+
+# Define the API endpoint URL to retrieve data for the SOBI Hamilton network
+url = "http://api.citybik.es/v2/networks/sobi-hamilton"
+
+# Make the GET request
+response = requests.get(url)
+
+# Check if the request was successful
+if response.status_code == 200:
+    # Parse the JSON response
+    data = response.json()
+    
+    # Extract station details
+    stations = data['network']['stations']
+    
+    # Create lists to store parsed data
+    station_names = []
+    latitudes = []
+    longitudes = []
+    bikes_available = []
+    
+    # Parse data and store in lists
+    for station in stations:
+        station_names.append(station['name'])
+        latitudes.append(station['latitude'])
+        longitudes.append(station['longitude'])
+        bikes_available.append(station['free_bikes'])
+    
+    # Create DataFrame from parsed data
+    df = pd.DataFrame({
+        'Station Name': station_names,
+        'Latitude': latitudes,
+        'Longitude': longitudes,
+        'Bikes Available': bikes_available
+    })
+    
+    # Print DataFrame
+    print(df)
+else:
+    # Handle errors
+    print(f'Error: {response.status_code} - {response.text}')
+```
+
+
 
 ## Results
 (fill in what you found about the comparative quality of API coverage in your chosen area and the results of your model.)
