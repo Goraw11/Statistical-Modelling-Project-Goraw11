@@ -14,7 +14,6 @@
 
 ## Process
 Using the code below, I started off by Sending an API Request to City Bikes API, picked city of Hamilton, Ontario.
-(I had to ensure that I do not get 
 
 ```
 import requests
@@ -62,7 +61,10 @@ else:
     print(f'Error: {response.status_code} - {response.text}')
 ```
 
-
+I then packaged the results nicely into a CSV file.
+```
+df.to_csv('..\\data\\available_bikes.csv', index=False)
+```
 
 ## Results
 (fill in what you found about the comparative quality of API coverage in your chosen area and the results of your model.)
