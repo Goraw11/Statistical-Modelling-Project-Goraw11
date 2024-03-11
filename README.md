@@ -62,7 +62,7 @@ else:
 ```
 
 I then packaged the results nicely into a CSV file.
-```
+```Python
 df.to_csv('..\\data\\available_bikes.csv', index=False)
 ```
 
@@ -70,7 +70,7 @@ Following that, I moved over to fetch data from Foursquare and Yelp, by using my
 (Here, I had to insert the 'for' function, so as to ensure that my API doesn't get blocked for repeatedly trying to fetch the data).
 
 Foursquare:
-```
+```Python
 #get data from the FS API
 def get_venues_fs(latitude, longitude, radius, api_key, categories):
     """
@@ -104,8 +104,10 @@ def get_venues_fs(latitude, longitude, radius, api_key, categories):
     return resp
 ```
 
+
 Yelp:
-```import requests
+```Python
+import requests
 
 # Define the function to get venues from Yelp
 def get_venues_yelp(latitude, longitude, radius, api_key, categories=None):
@@ -170,7 +172,9 @@ For both Yelp and Foursquare API Queries:
 - Packaged the results into a nice CSV
 - compared the results
 - Listed top 10 restaurants according to their name and rating
-```
+
+
+```Python
 # Sort the DataFrame by the ratings column in descending order, then by name alphabetically
 top_restaurants = flattenedYELPdata.sort_values(by=['rating', 'name'], ascending=[False, True])
 
